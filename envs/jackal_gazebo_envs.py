@@ -228,8 +228,7 @@ class JackalGazeboLaser(JackalGazebo):
         
         goal_pos = self.transform_goal(self.world_frame_goal, pos, psi)   # roughly (-1, 1) range
         rela_angle = np.arctan2(goal_pos[0],goal_pos[1])
-        # rela_dis = np.sqrt(goal_pos[0]**2+goal_pos[1]**2)
-	rela_dis = 1.0/(np.sqrt(goal_pos[0]**2+goal_pos[1]**2)+1e-8)
+        rela_dis = np.sqrt(goal_pos[0]**2+goal_pos[1]**2)
         
 #        bias = (self.action_space.high + self.action_space.low) / 2.
 #        scale = (self.action_space.high - self.action_space.low) / 2.
